@@ -2,10 +2,6 @@ import { galleryItems } from './gallery-items.js';
 
 const galleryEl = document.querySelector('.gallery');
 
-makeGalleryMarkup();
-
-const lightbox = new SimpleLightbox('.gallery__item', { captionsData: 'alt', captionDelay: 250});
-
 function makeGalleryMarkup() {
     const markup = galleryItems
         .map(({ preview, original, description }) =>
@@ -16,3 +12,7 @@ function makeGalleryMarkup() {
         .join('');
     galleryEl.innerHTML = markup;
 };
+
+makeGalleryMarkup();
+
+const lightbox = new SimpleLightbox('.gallery__item', { captionsData: 'alt', captionDelay: 250 });
